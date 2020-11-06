@@ -283,6 +283,7 @@ Przydatnym przełącznikiem polecenia rm jest przełącznik -r, który służy d
 `touch [przełączniki] nazwa_pliku` - modyfikuje informacje na temat czasów modyfikacji i odczytu pliku, ale pozwala także na utworzenie pliku, np.:
 
 `touch abc.txt` - utworzenie (pustego) pliku abc.txt w katalogu bieżącym.
+
 Polecenia dotyczące plików (i katalogów) można także wydawać z wykorzystaniem tzw. wzorców uogólniających, które tworzy się z zastosowaniem następujących operatorów:
 
 `*` - zastępuje dowolny ciąg znaków (także pusty);  
@@ -293,6 +294,8 @@ Oto przykładowe polecenia z wykorzystaniem wzorców uogólniających:
 
 `cp ./*.txt ~` - kopiowanie wszystkich plików z rozszerzeniem .txt z katalogu bieżącego do katalogu domowego użytkownika;  
 `rm ./[0-9]*` - usunięcie wszystkich plików z katalogu domowego, których nazwa rozpoczyna się od cyfry.
+
+Pliki można również tworzyć, przeglądać i edytować za pomocą edytorów dostępnych z poziomu terminala. Oprócz dość nieintuicyjnego, ale kultowego edytora `vim`, warto sprawdzić możliwości prostego edytora `nano`.
 
 ### **Wyszukiwanie w systemie plików**
 
