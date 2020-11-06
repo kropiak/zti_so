@@ -309,11 +309,12 @@ ls: /bin/ls /usr/share/man/man1/ls.1.gz
 ```
 Do wyszukiwania plików można także zastosować polecenie:
 
-`locate [przełączniki] wzorzec``  
+`locate [przełączniki] wzorzec`  
+
 Program ten wyszukuje pliki, podając listę plików ze śćieżkami, których nazwa zostanie dopasowana do podanego jako argument wywołania wzorca. Program locate zwraca wyniki niemal natychmiast, ponieważ wyszukiwanie faktycznie odbywa się na przygotowanej wcześniej bazie plików (nie jest przeszukiwana cała struktura katalogów). Baza ta (indeks nazw plików), przeważnie jest aktualizowana raz na dobę - oznacza to, że wynik może nie uwzględniać zmian w systemie plików i katalogów, jakie zostały wykonane po ostatniej aktualizacji spisu (aktualizacji może zawsze dokonać administrator systemu wykorzystując polecenie updatedb). Wzorzec zapytania można budować z wykorzystaniem operatorów uogólniających - wówczas należy umieścić wzorzec w cudzysłowie, aby nie został on rozwinięty przez interpreter poleceń; oto przykłady wywołań polecenia locate:
 
 ```console
-loacte ls
+locate ls
 locate "*l*s"
 locate "/usr/share/man/*ls.1.gz"
 ```
@@ -333,7 +334,7 @@ Pierwszym argumentem wywołania polecenia find jest nazwa katalogu, od którego 
 - `ctime <dni>` - pozycje, których i-węzeł był modyfikowany podaną liczbę dni temu; przed ilością dni można podać znaki + lub -, oznaczają one wówczas odpowiednio: pozycje, których i-węzeł był modyfikowany więcej/mniej dni temu;
 - `type <typ>` - określenie jakie pozycje mają zostać odnalezione: f - pliki zwykłe, d - katalogi, l - dowiązania symboliczne, c - urządzenia znakowe (niebuforowane), b - urządzenia blokowe (buforowane), p - kolejki FIFO;
 - `exec <polecenie> [{}] \;` - wykonuje dowolne polecenie; polecenie może zostać wykonane na odszukanych pozycjach - wówczas należy zastosować jako argument polecenia znaki {}.
-- 
+
 Oto przykłady użycia polecenia find:
 
 `find ~ -name abc.txt` - wyszuka wszystkie pozycje o nazwie abc.txt, które znajdują sie w katalogu domowym użytkownika (oraz podkatalogach);  
@@ -343,10 +344,11 @@ Oto przykłady użycia polecenia find:
 
 ### **Inne przydatne polecenia powłoki**
 
-`who` - wyświetla aktualnie zalogowanych użytkowników w systemie,
-`id` - wyświetla informacje o identyfikatorze uzytkownika i grup, do których uzytkownik należy,
-`cat` - wyświetla zawartość plików podanych jako parametr wejściowy.  
-Przykłady:
+`who` - wyświetla aktualnie zalogowanych użytkowników w systemie,  
+`id` - wyświetla informacje o identyfikatorze uzytkownika i grup, do których uzytkownik należy,  
+`cat` - wyświetla zawartość plików podanych jako parametr wejściowy. 
+
+Przykłady:  
 `cat plik.txt` – wyświetli zawartość pliku plik.txt,  
 `cat plik.txt plik2.txt` – wyświetli zawartość obu plików zgodnie z podaną kolejnością
 
