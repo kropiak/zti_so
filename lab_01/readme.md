@@ -119,7 +119,7 @@ whatis passwd
 info passwd
 ```
 
-W celu ułatwienia korzystania z pomocy oraz szerszego dostępu to pomocy polskojęzycznej w trakcie zajęć wykorzystana zostanie strona [http://www.linux.pl/man/](http://www.linux.pl/man/).
+W celu ułatwienia korzystania z pomocy oraz szerszego dostępu to pomocy polskojęzycznej w trakcie zajęć wykorzystana zostanie strona [http://www.linux.pl/man/](http://www.linux.pl/man/) oraz [http://manpages.ubuntu.com/manpages/focal/pl](http://manpages.ubuntu.com/manpages/focal/pl).
 
 
 ### 1.2 **Podstawowe operacje w systemie plików**
@@ -263,16 +263,16 @@ Plik to zdefiniowana (przeważnie przez użytkownika) porcja danych, która jest
 
 Podstawowe operacje obsługi plików można realizować z wykorzystaniem następujących poleceń:
 
-`cp [przełączniki] nazwa_pliku nowa_nazwa_lub_katalog` - kopiowanie pliku określonego przez pierwszy argument pod nazwę lub do katalogu określonego drugim argumentem, np.:
-`cp abc.txt xyz.txt` - kopiuje plik abc.txt pod nową nazwę xyz.txt w katalogu bieżącym;
-`cp /tmp/abc.txt ~` - kopiuje plik abc.txt z katalogu /tmp do katalogu domowego użytkownika;
+`cp [przełączniki] nazwa_pliku nowa_nazwa_lub_katalog` - kopiowanie pliku określonego przez pierwszy argument pod nazwę lub do katalogu określonego drugim argumentem, np.:  
+`cp abc.txt xyz.txt` - kopiuje plik abc.txt pod nową nazwę xyz.txt w katalogu bieżącym;  
+`cp /tmp/abc.txt ~` - kopiuje plik abc.txt z katalogu /tmp do katalogu domowego użytkownika;  
 `cp abc.txt ~/xyz.txt` - kopiuje plik abc.txt z katalogu bieżącego pod nową nazwę xyz.txt w katalogu domowym użytkownika.
 
 Przydatnym przełącznikiem polecenia `cp` jest przełącznik `-r`, który służy do kopiowania całych struktur katalogów.
 
-`rm [przełączniki] lista_plików` - usuwanie plików podanych jako argumenty wywołania, np.:
-`rm abc.txt xyz.txt` - usuwa pliki abc.txt i xyz.txt w katalogu bieżącym;
-`rm /tmp/abc.txt` - usuwa plik abc.txt z katalogu /tmp;
+`rm [przełączniki] lista_plików` - usuwanie plików podanych jako argumenty wywołania, np.:  
+`rm abc.txt xyz.txt` - usuwa pliki abc.txt i xyz.txt w katalogu bieżącym;  
+`rm /tmp/abc.txt` - usuwa plik abc.txt z katalogu /tmp;  
 
 Przydatnym przełącznikiem polecenia rm jest przełącznik -r, który służy do usuwania całych struktur katalogów.
 
@@ -394,8 +394,11 @@ Rozpatrzmy poniższy przykład:
 $ ls > /home/kropiak/lista.txt
 ```
 Wynik działania komendy ls zostanie przekierowany (symbolizuje to znak „>”) do w/w pliku, tzn., że lista która wyświetliłaby się na konsoli zostanie zapisana do pliku. Jeżeli plik nie istnieje to zostanie utworzony pod warunkiem posiadania odpowiednich uprawnień. Jeżeli plik istnieje to zostanie nadpisany nową zawartością.
+
 Aby dopisać dane do pliku musimy zamienić znak „>” na „>>”, więc ponowne wywołanie
+```console
 $ ls >> /home/kropiak/lista.txt
+```
 spowoduje dopisanie danych do pliku lista.txt.
 
 ## **Ćwiczenia**
