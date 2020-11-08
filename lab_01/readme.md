@@ -370,8 +370,8 @@ Poniżej kilka możliwości:
 `[a-z]` – oznacza dowolny znak z zakresu a do z  
 `[^]` – dopełnienie zbioru np. `[^aA]` – oznacza dowolny znak nie będący a lub A, natomiast `[^a-z]` - oznacza dowolny znak różny od a do z  
 `^` – takie oznaczenie będzie znaczyło 'zaczyna się od', np. `^po` - oznacza zaczyna się od liter `po`. 
-`$` – oznacza kończy się na, np. `$ski` - kończy się na `ski`.  
-`\\` - interpretuje kolejny znak dosłownie, np. ‘\\.’ szuka kropki zamiast dowolnego znaku  
+`$` – oznacza kończy się na, np. `ski$` - kończy się na `ski`.  
+`\` - interpretuje kolejny znak dosłownie, np. ‘\.’ szuka kropki zamiast dowolnego znaku  
 
 Narzędzie `grep` posiada również kilka przydatnych opcji:  
 `-i` – wzorzec NIE uwzględnia wielkość liter  
@@ -420,7 +420,7 @@ użytkowników.
 13. Korzystając z programu find znajdź wszystkie katalogi o nazwie bin, które znajdują się w katalogu /usr.
 14. Za pomocą polecenia ls wyświetl tylko pliki z rozszerzeniem txt, które znajdują się w folderze domowym.
 15. Wyświetl wszystkie zasoby z folderu /var/log, których nazwa rozpoczyna się od ‘a’ a na 3 pozycji znajduje się litera ‘t’.
-16. Wyświetl 20 pierwszych linii pliku z ćwiczenia 10.
+16. Wyświetl 20 pierwszych linii pliku z ćwiczenia 9.
 17. Wyświetl na konsoli liczbę wyrazów z pliku z zadania 7.
 18. Ukryj plik nazwisko.txt korzystając z poznanych poleceń powłoki.
 19. Zmień własne hasło.
