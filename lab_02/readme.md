@@ -101,7 +101,7 @@ Przeglądając manual polecenia `chmod` natkiemy się na linię `Każdy TRYB ma 
 
 Polecenie
 ```console
-chown u+s moj_plik.sh
+chmod u+s moj_plik.sh
 ```
 nada pozostałym użytkownikom prawo do wykonania pliku jak jego właściciel. Bit ten ustawiamy na poziomie uprawnień właściciela.
 
@@ -116,7 +116,7 @@ Jak to się ma jednak do uprawnień określanych metodą numeryczną ? Te specja
 
 _Przykład:_
 ```console
-chown 4755 moj_plik.sh
+chmod 4755 moj_plik.sh
 ```
 
 Bit `setgid` ustawiany jest na poziomie grupy i możemy go ustawić dla plików wykonywalnych oraz na katalogach. Z ustawionym bitem `setgid` plik jest wykonywany przez użytkowników, którzy nie są jego właścicielami, z przywilejami użytkowników należących do grupy. Przykładem może być polecenie `wall`:
