@@ -33,7 +33,7 @@ Każdy z trzech bytów opisany jest stosowną literą (+ opcja obejmująca wszys
 * `o - others - pozostali`
 * `a - all - wszyscy`
 
-Dodatkowo mamy do dyspozycji trzy operatory - `+,-` oraz `=`, którymi możemy ustawiać odpowiednie uprawnienia. Uprawnienia możemy nadawać dla wielu bytów jednocześnie:
+Dodatkowo mamy do dyspozycji trzy operatory: `+,-` oraz `=`, którymi możemy ustawiać odpowiednie uprawnienia. Uprawnienia możemy nadawać dla wielu bytów jednocześnie:
 ```console
 chmod go+rw plik.txt
 chmod g=rw,o=x plik.txt
@@ -211,7 +211,43 @@ Listę grup, do których należy zalogowany użytkownik można sprawdzić polece
 Najpopularniejsze sposoby tworzenia kont użytkowników to:
 * wykorzystanie narzędzia `useradd`,
 * wykorzystanie narzędzia `adduser`,
-* ręczna edycja plików z definicjami użytkowników.
+* ręczna edycja plików z definicjami użytkowników (ostrożnie!)
+
+Polecenie `useradd` w minimalnej swojej postaci czyli
+```console
+sudo useradd bolek
+```
+stworzy nowego użytkownika o nazwie `bolek` (o ile już nie istnieje) z domyślnymi ustawieniami dla ścieżki domowej (`/home/bolek`) oraz powłoką - `/bin/sh`. Natomiast folder domowy nie zostanie utworzony. Jego utworzenie należy wskazać poprzez dodanie opcji `-m` do wywołania polecenia `useradd`.
+
+Polecenie `adduser` w domyślnej postaci działa nieco inaczej:
+```console
+sudo adduser lolek
+# wyświetli
+odawanie użytkownika "lolek"...
+Dodawanie nowej grupy "lolek" (1008)...
+Dodawanie nowego użytkownika "lolek" (1007) w grupie "lolek"...
+Tworzenie katalogu domowego "/home/lolek"...
+Kopiowanie plików z "/etc/skel" ...
+Nowe hasło : 
+Proszę ponownie wpisać nowe hasło : 
+passwd: hasło zostało zmienione
+Zmieniam informację o użytkowniku lolek
+Wpisz nową wartość lub wciśnij ENTER by przyjąć wartość domyślną
+	Imię i nazwisko []: 
+	Numer pokoju []: 
+	Telefon do pracy []: 
+	Telefon domowy []: 
+	Inne []: 
+Czy informacja jest poprawna? [T/n] 
+```
+
+To polecenie w podstawowej formie działa jak kreator pozwalający przejść kolejne kroki tworzenia konta użytkownika informując nas również o kolejnych wykonanych czynnościach.
+
+Inną postacią tego polecenia jest postać:
+```console
+sudo adduser lolek marketing
+```
+które pozwala dodać istniejącego użytkownika do istniejącej grupy. W tym przypadku użytkownik lolek zostanie dosany do grupy marketing.
 
 Istniejące konto można modyfikować na kilka sposobów:
 * polecenie `chfn` zmienia informacje GECOS (imię, nazwisko, itp.) o użytkowniku,
@@ -222,9 +258,11 @@ Istniejące konto można modyfikować na kilka sposobów:
 
 Usuwanie kont i grup:
 * konto użytkownika można usunąć przy pomocy polecenia `userdel`,
-* powyższe polecenie z opcją -r usuwa katalog domowy użytkownika,
+* powyższe polecenie z opcją `-r` usuwa katalog domowy użytkownika,
 * polecenie `groupdel` usuwa grupy użytkowników,
 * przy pomocy polecenia instrukcji `find` można odnaleźć i usunąć pliki których właścicielem jest podany użytkownik lub grupa.
+
+> Polecenie `userdel` domyślnie nie usuwa folderu domowego usuwanego uzytkownika, nalezy sprawdzić w maunalu opcję, która doda tę operację to procesu usuwania konta użytkownika.
 
 Blokowanie dostępu do konta:
 * poleceniem `passwd` z opcją `-l`,
@@ -255,24 +293,24 @@ Po utworzeniu konta użytkownika informacje o jego ustawieniach można znaleźć
 2.2 Dodaj użytkownika gdzie jego UID to 1111, imię i nazwisko to Marian Maliniak a nazwa użytkownika to mmaliniak. Sprawdź jakie zmiany zaszły w pliku `/etc/passwd` i porównaj mechanizm nadawania UID z narzędziem useradd,  
 2.3 Dodaj użytkownika Anna Siębała (asiebala).  
 2.4 Poprzez edycję pliku `/etc/group` dodaj nowe grupy – marketing, sprzedaż, bok a następnie użytkowników jkowalski i mmaliniak do grupy marketing, sprzedaż a asiebala do grupy marketing, bok,  
-2.5 Za pomocą polecenia groups sprawdź czy w/w użytkownicy są przypisani do odpowiednich grup,  
-2.6 Za pomocą polecenia delgroup usuń grupy marketing, sprzedaż i bok,  
-2.7 Za pomocą polecenia groupadd dodaj ponownie usunięte grupy z punktu f,  
-2.8 Za pomocą adduser dodaj użytkowników do grup jak w podpunkcie d,  
-2.9 Przy pomocy polecenia chfn zmień imię użytkownika Marian Maliniak na Mateusz Maliniak,  
+2.5 Za pomocą polecenia `groups` sprawdź czy w/w użytkownicy są przypisani do odpowiednich grup,  
+2.6 Za pomocą polecenia `delgroup` usuń grupy marketing, sprzedaż i bok,  
+2.7 Za pomocą polecenia `groupadd` dodaj ponownie usunięte grupy z punktu f,  
+2.8 Za pomocą `adduser` dodaj użytkowników do grup jak w podpunkcie d,  
+2.9 Przy pomocy polecenia `chfn` zmień imię użytkownika Marian Maliniak na Mateusz Maliniak,  
 2.10 Jeżeli wcześniej nie zostało to zrobione – dodaj hasła dla użytkowników mmaliniak, jkowalski i asiebala,  
-2.11 Przy pomocy polecenia login zaloguj się na konto jkowalski. Sprawdź czy użytkownik posiada folder domowy i jeżeli tak to przeglądnij zawartość plików .profile, .bashrc w jego folderze domowym. Za pomocą polecenia exit wyloguj się z tego konta,  
-2.12 Przy pomocy polecenia passwd wymuś zmianę hasła dla użytkownika jkowalski przy kolejnej próbie logowania. Po tej operacji zaloguj się na konto jkowalski następnie wyloguj się,  
-2.13 Przy pomocy passwd zablokuj konto użytkownika jkowalski a następnie spróbuj się zalogować na to konto,  
+2.11 Przy pomocy polecenia `login` zaloguj się na konto jkowalski. Sprawdź czy użytkownik posiada folder domowy i jeżeli tak to przeglądnij zawartość plików `.profile, .bashrc` w jego folderze domowym. Za pomocą polecenia `exit` wyloguj się z tego konta,  
+2.12 Przy pomocy polecenia `passwd` wymuś zmianę hasła dla użytkownika jkowalski przy kolejnej próbie logowania. Po tej operacji zaloguj się na konto jkowalski następnie wyloguj się,  
+2.13 Przy pomocy `passwd` zablokuj konto użytkownika jkowalski a następnie spróbuj się zalogować na to konto,  
 2.14 Odblokuj konto jkowalski poprzez edycję odpowiedniego pliku konfiguracyjnego.
 
 3. Uprawnienia do zasobów.  
-3.1 W udziale `/usr/share` utwórz folder MARKETING i zezwól użytkownikom z grupy marketing na przeglądanie i odczyt tego folderu,  
-3.2 W folderze MARKETING dodaj dwa nowe foldery sprzedaż i bok a następnie ustaw uprawnienia tak, aby odpowiednio członkowie grupy sprzedaż i bok mieli możliwość odczytywania, zapisywania, przeglądania (lub wykonywania) plików w tych folderach,  
-3.3 Zaloguj się na konto asiebala i sprawdź czy można utworzyć zasób w folderze MARKETING, bok i sprzedaż,  
-3.4 W folderach odpowiednich grup, np. jkowalski należy do grupy sprzedaż więc w folderze `/usr/share/MARKETING/sprzedaz` utwórz folder jkowalski za pomocą komendy mkdir i zmiennej systemowej USER (wszystkie zmienne można zobaczyć za pomocą polecenia printenv) – należy najpierw zalogować się na konto jkowalski. Utwórz pozostałe dwa foldery (dla mmaliniak i asiebala) w dowolny sposób, ale tak, aby to ci użytkownicy byli ich właścicielami,  
-3.5 W każdym folderze utworzonym w punkcie d.) utwórz plik użytkownik_grupy.txt, np. jkowalski_grupy.txt, którego zawartość to:
+3.1 W udziale `/usr/share` utwórz folder `MARKETING` i zezwól użytkownikom z grupy marketing na przeglądanie i odczyt tego folderu,  
+3.2 W folderze `MARKETING` dodaj dwa nowe foldery sprzedaż i bok a następnie ustaw uprawnienia tak, aby odpowiednio członkowie grupy sprzedaż i bok mieli możliwość odczytywania, zapisywania, przeglądania (lub wykonywania) plików w tych folderach,  
+3.3 Zaloguj się na konto asiebala i sprawdź czy można utworzyć zasób w folderze `MARKETING`, bok i sprzedaż,  
+3.4 W folderach odpowiednich grup, np. jkowalski należy do grupy sprzedaż więc w folderze `/usr/share/MARKETING/sprzedaz` utwórz folder jkowalski za pomocą komendy `mkdir` i zmiennej systemowej `USER` (wszystkie zmienne można zobaczyć za pomocą polecenia `printenv`) – należy najpierw zalogować się na konto jkowalski. Utwórz pozostałe dwa foldery (dla mmaliniak i asiebala) w dowolny sposób, ale tak, aby to ci użytkownicy byli ich właścicielami,  
+3.5 W każdym folderze utworzonym w punkcie d.) utwórz plik `użytkownik_grupy.txt`, np. jkowalski_grupy.txt, którego zawartość to:
 * pierwsza linia to nazwa użytkownika  
 * kolejna linia to lista grup, do której użytkownik należy  
 
-Do wykonania ćwiczenia można wykorzystać przekierowanie domyślnego wyjścia do pliku (patrz materiały) oraz polecenie groups.
+Do wykonania ćwiczenia można wykorzystać przekierowanie domyślnego wyjścia do pliku (patrz materiały) oraz polecenie `groups`.
