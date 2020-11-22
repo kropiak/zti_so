@@ -368,13 +368,16 @@ Poniżej kilka możliwości:
 `.` – kropka zastępuje dowolny jeden znak tekstu  
 `[abc]` – oznacza wstawienie dowolnego znaku spośród podanych – a,b lub c  
 `[a-z]` – oznacza dowolny znak z zakresu a do z  
-`[^]` – dopełnienie zbioru np. `[^aA]` – oznacza dowolny znak nie będący a lub A, natomiast `[^a-z]` - oznacza dowolny znak różny od a do z  
-`^` – takie oznaczenie będzie znaczyło 'zaczyna się od', np. `^po` - oznacza zaczyna się od liter `po`. 
+`[^]` – dopełnienie zbioru np.  
+`[^aA]` – oznacza dowolny znak nie będący a lub A, natomiast  
+`[^a-z]` - oznacza dowolny znak różny od a do z  
+`^` – takie oznaczenie będzie znaczyło 'zaczyna się od', np.  
+`^po` - oznacza zaczyna się od liter `po`.  
 `$` – oznacza kończy się na, np. `ski$` - kończy się na `ski`.  
 `\` - interpretuje kolejny znak dosłownie, np. ‘\.’ szuka kropki zamiast dowolnego znaku  
 
 Narzędzie `grep` posiada również kilka przydatnych opcji:  
-`-i` – wzorzec NIE uwzględnia wielkość liter  
+`-i` – wzorzec NIE uwzględnia wielkości liter  
 `-n` – dla każdego pliku zostanie też wyświetlony numer linii, w której został znaleziony wzorzec  
 `-l` – wyświetli tylko nazwy plików, gdzie został znaleziony wzorzec  
 `-v` – zaprzeczenie wzorca – wyświetli wszystkie linie, które NIE zawierają wzorca  
