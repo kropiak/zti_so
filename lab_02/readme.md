@@ -219,6 +219,65 @@ sudo useradd bolek
 ```
 stworzy nowego użytkownika o nazwie `bolek` (o ile już nie istnieje) z domyślnymi ustawieniami dla ścieżki domowej (`/home/bolek`) oraz powłoką - `/bin/sh`. Natomiast folder domowy nie zostanie utworzony. Jego utworzenie należy wskazać poprzez dodanie opcji `-m` do wywołania polecenia `useradd`.
 
+Inną istona rzeczą, na którą należy zwrócić uwagę jest fakt przechowywania i zarządzania wartościami domyślnymi polecenia `useradd`. Wywołanie polecenia:
+```console
+useradd -D
+```
+wyświetli jego domyślne ustawienia, np.:
+```console
+GROUP=100
+HOME=/home
+INACTIVE=-1
+EXPIRE=
+SHELL=/bin/sh
+SKEL=/etc/skel
+CREATE_MAIL_SPOOL=no
+```
+
+Próba zmiany domyślnych ustawień bez `sudo` się nie powiedzie:
+```console
+useradd -D -s /bin/bash
+# wyświetli
+useradd: nie można utworzyć nowego pliku z ustawieniami domyślnymi
+```
+
+Spróbujmy więc z `sudo`:
+```console
+sudo useradd -D -s /bin/bash
+# i teraz
+useradd -D
+# wyświetli
+GROUP=100
+HOME=/home
+INACTIVE=-1
+EXPIRE=
+SHELL=
+SKEL=/etc/skel
+CREATE_MAIL_SPOOL=no
+```
+Dziwi brak wartości dla `SHELL`, ale gdy wyświetlimy te ustawienia również używając `sudo`:
+```cosnole
+udo useradd -D
+# wyświetli
+GROUP=100
+HOME=/home
+INACTIVE=-1
+EXPIRE=
+SHELL=/bin/bash
+SKEL=/etc/skel
+CREATE_MAIL_SPOOL=no
+```
+Pozostaje nam przetestować czy to ustawienie działa poprawnie:
+```console
+sudo useradd testowy
+# sprawdzamy ostatnią linią w pliku /etc/passwd
+tail -1 /etc/passwd
+# i otrzymamy
+testowy:x:1008:1010::/home/testowy:/bin/bash
+```
+Zmiana wartości domyślnej dla powłoki przyniosła pożądany efekt.
+
+
 Polecenie `adduser` w domyślnej postaci działa nieco inaczej:
 ```console
 sudo adduser lolek
@@ -247,7 +306,7 @@ Inną postacią tego polecenia jest postać:
 ```console
 sudo adduser lolek marketing
 ```
-które pozwala dodać istniejącego użytkownika do istniejącej grupy. W tym przypadku użytkownik lolek zostanie dosany do grupy marketing.
+które pozwala dodać istniejącego użytkownika do istniejącej grupy. W tym przypadku użytkownik `lolek` zostanie dodany do grupy `marketing`.
 
 Istniejące konto można modyfikować na kilka sposobów:
 * polecenie `chfn` zmienia informacje GECOS (imię, nazwisko, itp.) o użytkowniku,
