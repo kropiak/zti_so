@@ -354,8 +354,8 @@ Po utworzeniu konta użytkownika informacje o jego ustawieniach można znaleźć
 2.4 Poprzez edycję pliku `/etc/group` dodaj nowe grupy – marketing, sprzedaż, bok a następnie użytkowników jkowalski i mmaliniak do grupy marketing, sprzedaż a asiebala do grupy marketing, bok,  
 2.5 Za pomocą polecenia `groups` sprawdź czy w/w użytkownicy są przypisani do odpowiednich grup,  
 2.6 Za pomocą polecenia `delgroup` usuń grupy marketing, sprzedaż i bok,  
-2.7 Za pomocą polecenia `groupadd` dodaj ponownie usunięte grupy z punktu f,  
-2.8 Za pomocą `adduser` dodaj użytkowników do grup jak w podpunkcie d,  
+2.7 Za pomocą polecenia `groupadd` dodaj ponownie usunięte grupy z punktu 2.6,  
+2.8 Za pomocą `adduser` dodaj użytkowników do grup jak w podpunkcie 2.4,  
 2.9 Przy pomocy polecenia `chfn` zmień imię użytkownika Marian Maliniak na Mateusz Maliniak,  
 2.10 Jeżeli wcześniej nie zostało to zrobione – dodaj hasła dla użytkowników mmaliniak, jkowalski i asiebala,  
 2.11 Przy pomocy polecenia `login` zaloguj się na konto jkowalski. Sprawdź czy użytkownik posiada folder domowy i jeżeli tak to przeglądnij zawartość plików `.profile, .bashrc` w jego folderze domowym. Za pomocą polecenia `exit` wyloguj się z tego konta,  
@@ -368,7 +368,7 @@ Po utworzeniu konta użytkownika informacje o jego ustawieniach można znaleźć
 3.2 W folderze `MARKETING` dodaj dwa nowe foldery sprzedaż i bok a następnie ustaw uprawnienia tak, aby odpowiednio członkowie grupy sprzedaż i bok mieli możliwość odczytywania, zapisywania, przeglądania (lub wykonywania) plików w tych folderach,  
 3.3 Zaloguj się na konto asiebala i sprawdź czy można utworzyć zasób w folderze `MARKETING`, bok i sprzedaż,  
 3.4 W folderach odpowiednich grup, np. jkowalski należy do grupy sprzedaż więc w folderze `/usr/share/MARKETING/sprzedaz` utwórz folder jkowalski za pomocą komendy `mkdir` i zmiennej systemowej `USER` (wszystkie zmienne można zobaczyć za pomocą polecenia `printenv`) – należy najpierw zalogować się na konto jkowalski. Utwórz pozostałe dwa foldery (dla mmaliniak i asiebala) w dowolny sposób, ale tak, aby to ci użytkownicy byli ich właścicielami,  
-3.5 W każdym folderze utworzonym w punkcie d.) utwórz plik `użytkownik_grupy.txt`, np. jkowalski_grupy.txt, którego zawartość to:
+3.5 W każdym folderze utworzonym w punkcie 3.4 utwórz plik `użytkownik_grupy.txt`, np. jkowalski_grupy.txt, którego zawartość to:
 * pierwsza linia to nazwa użytkownika  
 * kolejna linia to lista grup, do której użytkownik należy  
 
