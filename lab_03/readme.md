@@ -129,12 +129,12 @@ Warto również wspomnieć w tym miejscu o rozszerzonej wersji wyrażeń regular
 |Znacznik|Opis|
 |---|---|
 |?|      Poprzedzający element jest opcjonalny i dopasowany co najwyżej jeden raz.
-*  |    Poprzedzający element będzie dopasowany zero lub więcej razy. Nazywane dopełnieniem Kleene'a.
-+  |    Poprzedzający element będzie dopasowany jeden lub więcej razy.
-{n} |   Poprzedzający element pasuje dokładnie n razy.
-{n,} |  Poprzedzający element pasuje n lub więcej razy.
-{,m}  | Poprzedzający element pasuje co najwyżej m razy. Jest to rozszerzenie GNU.
-{n,m}  |Poprzedzający element pasuje co najmniej n razy, ale nie więcej niż m razy.
+|*  |    Poprzedzający element będzie dopasowany zero lub więcej razy. Nazywane dopełnieniem Kleene'a.
+|+  |    Poprzedzający element będzie dopasowany jeden lub więcej razy.
+|{n} |   Poprzedzający element pasuje dokładnie n razy.
+|{n,} |  Poprzedzający element pasuje n lub więcej razy.
+|{,m}  | Poprzedzający element pasuje co najwyżej m razy. Jest to rozszerzenie GNU.
+|{n,m}  |Poprzedzający element pasuje co najmniej n razy, ale nie więcej niż m razy.
 
 **Przykłady**
 ```console
