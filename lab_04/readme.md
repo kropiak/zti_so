@@ -76,9 +76,9 @@ Zmienne mogą przechowywać również wartości będące efektem wykonania polec
 GDZIE_JESTEM=`pwd`
 echo „Jestem w „$GDZIE_JESTEM
 ```
----
+
 #### Zmienne specjalne
----
+
 
 To najbardziej prywatne zmienne powłoki, są udostępniane użytkownikowi tylko do odczytu (są wyjątki).
 
@@ -90,9 +90,9 @@ Kilka przykładów:
 * `$@` - pokaże wszystkie parametry przekazywane do skryptu (też wyjątek), równoważne `$1 $2 $3` …, jeśli nie podane są żadne parametry `$@` interpretowana jest jako nic.
 `$$` - PID procesu bieżącej powłoki
 
----
+
 #### Zmienne systemowe
----
+
 
 Zmienne systemowe, często nazwane także zmiennymi środowiskowymi (ang. environment variables) - są zdefiniowane i przechowywane w środowisku nadrzędnym (powłoce z której uruchamiane są Twoje skrypty). Ich nazwy są zwyczajowo zapisane wielkimi literami. Definiują środowisko użytkownika, dostępne dla wszystkich procesów potomnych.
 
@@ -105,9 +105,9 @@ Krzysztof Ropiak
 
 Listę zdefiniowanych zmiennych systemowych wraz z ich wartościami wyświetlamy poleceniem `printenv`.
 
----
+
 #### Zmienne tablicow
----
+
 
 BASH pozwala na stosowanie zmiennych tablicowych jednowymiarowych. Czym jest tablica? To zmienna która przechowuje listę jakichś wartości (rozdzielonych spacjami), w BASH'u nie ma maksymalnego rozmiaru tablic. Kolejne wartości zmiennej tablicowej indeksowane są przy pomocy liczb całkowitych, zaczynając od 0.
 
@@ -127,9 +127,8 @@ echo ${tablica[2]}
 
 Zadeklarowana została zmienna tablicowa o nazwie: tablica, zawierająca trzy wartości: element1 element2 element3. Natomiast polecenie: `echo ${tablica[0]}` wydrukuje na ekranie pierwszy elementu tablicy. W powyższym przykładzie w ten sposób wypisana zostanie cała zawartość tablicy. Do elementów tablicy odwołujemy się za pomocą wskaźników.
 
----
 #### Odwołanie do elementów tablicy.
----
+
 
 **Składnia:**
 ```bash
@@ -170,9 +169,9 @@ echo ${#tablica[@]}
 ```
 
 Co da wynik: 3.
----
+
 #### Dodawanie elementów do tablicy.
----
+
 
 **Składnia:**
 ```bash
@@ -196,9 +195,9 @@ echo ${linux[@]}
 
 Utworzona została tablica linux zawierająca dwa elementy.
 
----
+
 #### Usuwanie elementów tablic i całych tablic.
----
+
 
 Dany element tablicy usuwa się za pomocą polecenia `unset`.
 
