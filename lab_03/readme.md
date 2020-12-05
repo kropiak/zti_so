@@ -207,7 +207,7 @@ Pamiętajmy również o tym, że możemy wartość zwróconą przez `grep` ponow
 12. Z folderu domowego wyświetl wszystkie nazwy, które mają dokładnie 4 znaki długości (małe i wielkie litery oraz cyfry).
 13. Z folderu `/var/log` wyświetl wszystkie nazwy, które mają rozszerzenie 'log'.
 14. Wyświetl linie oraz ich numery przeszukując plik `/var/log/auth.log.1` w poszukiwaniu swojej nazwy użytkownika.
-15. To samo co w zadaniu poprzednim, ale przeszukując również podfoldery.
+15. To samo co w zadaniu 13, ale przeszukując również podfoldery.
 16. Z dołączenego pliku 'imiona.txt' wyświetl wszystkie imiona rozpoczynające się literami od A do K.
 17. Z pliku 'imiona.txt' wyświetl tylko te imiona, których nazwa ma 4 lub 5 liter długości.
 18. Z pliku 'imiona.txt' policz ile jest unikalnych imion kończących się literą 'a'.
