@@ -65,7 +65,7 @@ Aby efektywnie korzystać z potokowania przy wyszukiwaniu zasobów w systemie na
 `^` – takie oznaczenie będzie znaczyło 'zaczyna się od', np.  
 `^po` - oznacza zaczyna się od liter `po`.  
 `$` – oznacza "kończy się na", np. `ski$` - kończy się na `ski`.  
-`\` - interpretuje kolejny znak dosłownie, np. ‘\.’ szuka kropki zamiast dowolnego znaku  
+`\` - interpretuje kolejny znak dosłownie, np. '\\.' szuka kropki zamiast dowolnego znaku  
 
 To nie są jeszcze wszystkie możliwości jakimi dysponujemy, ale rozpatrzmy kilka przykładów z wykorzystaniem powyższych elementów.
 
@@ -176,7 +176,6 @@ Pamiętajmy również o tym, że możemy wartość zwróconą przez `grep` ponow
 
 
 **Zadania**  
-Przeszukiwanie plików z logami - chociaz tutaj będzie mało.
 
 1. Wyświetl wszystkie nazwy zasobów ze swojego folderu domowego, których nazwa rozpoczyna się od wielkiej litery.
 2. Ze swojego folderu domowego wyświetl wszystkie zasoby, których nazwa rozpoczyna się od znaku '.' (kropka).
