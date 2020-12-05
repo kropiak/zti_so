@@ -148,9 +148,10 @@ $ ls | grep -E '[[:digit:]]{2}'
 Z kolei opcja `-x` działa podobnie, ale powoduje zastosowanie wzorca dla całej linii - to oznacza, że zapis:
 ```bash
 $ ls | grep -x '[a-z]\+'
+$ ls | grep -x '[a-z0-9]\+'
 ```
 
-wypisze tylko linie, które składaja się z co najmniej jednaj małej litery (lub więcej).
+wypisze tylko linie, które składaja się z co najmniej jednaj małej litery (lub więcej). Kolejny przykład to tylko małe litery i cyfry.
 
 Do rozszerzonej wersji wyrażeń należą między innymi klasy znaków.
 
