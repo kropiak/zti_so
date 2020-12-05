@@ -36,7 +36,7 @@ W pierwszym przypadku podejmujemy próbę zakończenia zadania w tle o numerze 1
 Potokowanie poleceń podobnie jak przekierowanie standardowego strumienia np. do zewnętrznego pliku pozwala na przekazanie wyników polecenia do innego polecenia jako potoku wejściowego. Oznacza to możliwość wykonania łańcucha poleceń gdzie wynik poprzedniego przekazywany jest do kolejnego, aż do ostatniego polecenia. Jednym z najczęstrzych przypadków jest wykorzystanie polecenia `grep` (Global Regular Expression Print), które przeszukuje ciąg tekstowy w poszukiwaniu wskazanych wartości określonych przez wzorzec. Na początek jednak przykład z poleceniem `wc` (ang. word count).
 
 ```console
-$ ls | wc - l
+$ ls | wc -l
 ```
 
 Polecenie to przekaże wynik działania komendy `ls` jako wejście do komendy `wc -l`, które to zlicza ilość linii w przekazanym strumieniu.
@@ -95,7 +95,7 @@ Polecenie `sort` posiada również przydatne opcje (sprawdź w manualu) a międz
 * `-r` (reverse) - odwraca rezultat porównania  
 * `-u` (unique) - usunięcie duplikatów linii
 
-Łącząc teraz narzędzia `grep` i `sort` możemy znaleźć wszystkie unikalne wartości w pliku, które spełniają warunek, posortować oraz policzyć.
+Łącząc teraz narzędzia `grep` i `sort` możemy znaleźć wszystkie unikalne wartości w pliku, które spełniają warunek, posortować je oraz policzyć.
 ```console
 $ grep '[AOE]la' imiona.txt | sort | wc -l
 ```
@@ -107,7 +107,7 @@ Poniższe polecenie wyszuka nazwy wszystkich plików w katalogu `/var/log`, któ
 $ ls /var/log | grep '[0-9]'
 ```
 
-Dzięki wykorzystaniu negacji możemy wyszukiwać dopełnień zbioru okreslonego przez wzorzec.
+Dzięki wykorzystaniu negacji możemy wyszukiwać dopełnień zbioru określonego przez wzorzec.
 ```console
 $ ls /var/log | grep '[^0-9]'
 ```
