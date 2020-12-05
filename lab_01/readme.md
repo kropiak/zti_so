@@ -360,8 +360,8 @@ Przykłady:
 `grep` - narzędzie pozwalające przeszukiwać pliki, ciąg znaków w poszukiwaniu podanego wzorca.
 
 Przykłady:  
-`grep ‘imie’ plik.txt` – szuka tekstu ‘imie’ w pliku plik.txt  
-`grep ‘imie’ *.txt` – szuka tekstu ‘imie’ we wszystkich plikach z rozszerzeniem .txt
+`grep 'imie' plik.txt` – szuka tekstu ‘imie’ w pliku plik.txt  
+`grep 'imie' *.txt` – szuka tekstu ‘imie’ we wszystkich plikach z rozszerzeniem .txt
 
 W w/w przypadkach ‘imie’ jest argumentem, które może być wyrażeniem regularnym, które można zdefiniować w bardziej złożony sposób. 
 Poniżej kilka możliwości:  
@@ -374,7 +374,7 @@ Poniżej kilka możliwości:
 `^` – takie oznaczenie będzie znaczyło 'zaczyna się od', np.  
 `^po` - oznacza zaczyna się od liter `po`.  
 `$` – oznacza kończy się na, np. `ski$` - kończy się na `ski`.  
-`\` - interpretuje kolejny znak dosłownie, np. ‘\.’ szuka kropki zamiast dowolnego znaku  
+`\` - interpretuje kolejny znak dosłownie, np. '\.' szuka kropki zamiast dowolnego znaku  
 
 Narzędzie `grep` posiada również kilka przydatnych opcji:  
 `-i` – wzorzec NIE uwzględnia wielkości liter  
