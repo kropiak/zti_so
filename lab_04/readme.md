@@ -240,7 +240,7 @@ Operatory matematyczne:
 
 Rozpatrzmy poniższy przykład:
 ```bash
-!#/bin/bash
+#!/bin/bash
 a=1
 b=2
 c=$a+$b
@@ -296,11 +296,11 @@ c=`expr $a + $b`
 echo $c
 ```
 
-Wyrażenie zawarte pomiędzy znakiem `` ` ``  oraz `` ` `` (backtick) informuje interpreter o tym, że powinien wykonać te wyrażenie jako polecenie powłoki i w tym konkretnym przypadku jego wynik przypisać do zmiennej `c`. Wynikiem będzie suma zmiennych `a` i ``b` czyli liczba 3.
+Wyrażenie zawarte pomiędzy znakiem `` ` ``  oraz `` ` `` (backtick) informuje interpreter o tym, że powinien wykonać te wyrażenie jako polecenie powłoki i w tym konkretnym przypadku jego wynik przypisać do zmiennej `c`. Wynikiem będzie suma zmiennych `a` i `b` czyli liczba 3.
 
 Kolejny sposób na przypisanie wartości wyrażenia do zmiennej z wykorzystaniem polecenia expr:
 ```bash
-!#/bin/bash
+#!/bin/bash
 a=1
 b=2
 c=$(expr $a + $b)
@@ -308,7 +308,7 @@ echo $c
 ```
 Zapis `$(wyrażenie)` jest tożsamy z zapisem `` `wyrażenie` `` czyli powoduje obliczenie wartości wyrażenia i w tym przypadku zapisanie tej wartości do zmiennej `c`.
 
-Istnieje sposób pozwalający na pozbycie się polecenia expr jeżeli chcemy obliczyć wartość wyrażenia. Stosujemy wtedy zapis $((wyrażenie)):
+Istnieje sposób pozwalający na pozbycie się polecenia expr jeżeli chcemy obliczyć wartość wyrażenia. Stosujemy wtedy zapis `$((wyrażenie))`:
 ```bash
 #!/bin/bash
 a=1
@@ -474,7 +474,7 @@ _Operatory operujące na łańcuchach znakowych_
 `-n` - wyrażenie ma długość większą niż 0  
 `-z` - wyrażenie ma zerową długość `[ $x = "" ]`  
 
-**Łączenie kilku warunków**
+**Łączenie kilku warunków.**
 
 Czasem istnieje konieczność sprawdzenia wielu warunków jednocześnie i w tym celu możemy posłużyć się alternatywą lub koniunkcją logiczną.
 
@@ -486,7 +486,7 @@ test $a –gt 1 –o $a –lt 3
 echo $?
 ```
 
-Jak widać w powyższym przykładzie aby użyć alternatywy logicznej należy między warunkami dodać opcję –o (ang. OR, lub). Parametr –o można zastąpić poprzez „||”:
+Jak widać w powyższym przykładzie aby użyć alternatywy logicznej należy między warunkami dodać opcję `–o` (ang. `OR`, lub). Parametr `–o` można zastąpić poprzez `||`:
 ```bash
 #!/bin/bash
 a=2
@@ -502,14 +502,14 @@ a=2
 echo $?
 ```
 
-W przypadku koniunkcji logicznej (ang. AND) używamy parametru `–a` lub `&&`:
+W przypadku koniunkcji logicznej (ang. `AND`) używamy parametru `–a` lub `&&`:
 ```
 #!/bin/bash
 a=2
 test $a –gt 1 –a $a –lt 3
 echo $?
 ```
-Warto jeszcze wspomnieć o negacji logicznej `„!”` (ang. NOT), która też jest przydatna podczas pisania skryptów w bash-u.
+Warto jeszcze wspomnieć o negacji logicznej `„!”` (ang. `NOT`), która też jest przydatna podczas pisania skryptów w bash-u.
 
 **Przykład:**
 ```bash
@@ -694,11 +694,11 @@ Jeżeli mamy wiele warunków do rozpatrzenia lepszym rozwiązaniem niż instrukc
 ```bash
 case warunek in
 pattern|pattern...)
-polecenia
-;;
+    polecenia
+    ;;
 pattern|pattern...)
-polecenia
-;;
+    polecenia
+    ;;
 esac
 ```
 
@@ -804,7 +804,7 @@ until [ $x -ge 10 ]; do
 done
 ```
 
-Mamy zmienną `x`, która przyjmuje wartość 1, następnie sprawdzany jest warunek czy wartość zmiennej x jest większa lub równa 10, jeśli nie to wykonywane są polecenia zawarte wewnątrz pętli. W momencie gdy zmienna x osiągnie wartość, 10 pętla zostanie zakończona.
+Mamy zmienną `x`, która przyjmuje wartość 1, następnie sprawdzany jest warunek czy wartość zmiennej `x` jest większa lub równa 10, jeśli nie to wykonywane są polecenia zawarte wewnątrz pętli. W momencie gdy zmienna `x` osiągnie wartość, 10 pętla zostanie zakończona.
 
 #### Pętla for
 
@@ -867,7 +867,7 @@ Ile razy wykona się w/w pętla ?
 
 #### Pętla select
 
-Wygeneruje z listy słów po `in` proste ponumerowane menu a każdej pozycji odpowiada kolejna liczba od 1 wzwyż. Poniżej menu znajduje się znak zachęty `PS3` gdzie wpisujemy cyfrę odpowiadająca wybranej przez nas pozycji w menu. Jeśli nic nie wpiszemy i wciśniemy ENTER, menu będzie wyświetlone ponownie. To co wpisaliśmy zachowywane jest w zmiennej `REPLY`. Gdy odczytane zostaje `EOF` (ang. End Of File) czyli znak końca pliku (CTRL+D) to select kończy pracę. Pętla działa dotąd dopóki nie wykonane zostaje polecenie break lub return.
+Wygeneruje z listy słów po `in` proste ponumerowane menu a każdej pozycji odpowiada kolejna liczba od 1 wzwyż. Poniżej menu znajduje się znak zachęty `PS3` gdzie wpisujemy cyfrę odpowiadająca wybranej przez nas pozycji w menu. Jeśli nic nie wpiszemy i wciśniemy ENTER, menu będzie wyświetlone ponownie. To co wpisaliśmy zachowywane jest w zmiennej `REPLY`. Gdy odczytane zostaje `EOF` (ang. End Of File) czyli znak końca pliku (`CTRL+D`) to select kończy pracę. Pętla działa dotąd dopóki nie wykonane zostaje polecenie break lub return.
 
 **Składnia:**
 ```bash
@@ -901,7 +901,7 @@ Najpierw zobaczymy proste ponumerowane menu, składające się z czterech elemen
 Jeżeli istnieje konieczność przerwania pętli przed jej określoną liczbą przebiegów lub przed wystąpieniem warunku wyjścia z pętli wtedy należy posłużyć się poleceniem break.
 
 **Przykład:**
-```
+```bash
 #!/bin/bash
 for owoc in Jablko Pomarancza Cytryna
 do
