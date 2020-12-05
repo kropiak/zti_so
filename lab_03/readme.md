@@ -90,6 +90,8 @@ $ grep -w '[AOE]la' imiona.txt
 $ grep '[AOE]la' imiona.txt | sort
 ```
 
+Opcja `-w` dla polecenia `grep` powoduje, że szukane są słowa, które w całości pasują do wzorca a nie tylko go zawierają. 
+
 Polecenie `sort` posiada również przydatne opcje (sprawdź w manualu) a między innymi:
 * `-o` (output) - zapisanie wyniku posortowania w pliku o podanej nazwie
 * `-r` (reverse) - odwraca rezultat porównania  
@@ -142,6 +144,14 @@ Warto również wspomnieć w tym miejscu o rozszerzonej wersji wyrażeń regular
 # tu użycie opcji -E jest już konieczne
 $ ls | grep -E '[[:digit:]]{2}'
 ```
+
+Z kolei opcja `-x` działa podobnie, ale powoduje zastosowanie wzorca dla całej linii - to oznacza, że zapis:
+```bash
+$ ls | grep -x '[a-z]\+'
+```
+
+wypisze tylko linie, które składaja się z co najmniej jednaj małej litery (lub więcej).
+
 Do rozszerzonej wersji wyrażeń należą między innymi klasy znaków.
 
 | Klasa | Dopasowywane znaki |
