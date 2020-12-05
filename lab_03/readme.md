@@ -151,7 +151,12 @@ $ ls | grep -x '[a-z]\+'
 $ ls | grep -x '[a-z0-9]\+'
 ```
 
-wypisze tylko linie, które składaja się z co najmniej jednaj małej litery (lub więcej). Kolejny przykład to tylko małe litery i cyfry.
+wypisze tylko linie, które składaja się z co najmniej jednej małej litery (lub więcej). Kolejny przykład to tylko małe litery i cyfry. Jeżeli użyjemy opcji `-E` polecenia `grep` to nie musimy używać znaku '\' przed `+`:
+```bash
+$ ls | grep -xE '[a-z]+'
+$ ls | grep -xE '[a-z0-9]+'
+```
+
 
 Do rozszerzonej wersji wyrażeń należą między innymi klasy znaków.
 
@@ -208,4 +213,4 @@ Pamiętajmy również o tym, że możemy wartość zwróconą przez `grep` ponow
 18. Z pliku 'imiona.txt' policz ile jest unikalnych imion kończących się literą 'a'.
 19. Z pliku `/etc/passwd` wyświetl wszystkie linie, których użytkownicy posiadają uid co najmniej 4-cyfrowy. *
 20. Z pliku `/etc/shadow` wyświetl wszystkie linie, gdzie użytkownik ma nieważne hasło (patrz lab 02). *
-21. Poleceniem wget pobierz zawartość strony www.onet.pl (tylko tej) i następnie poleceniem grep wyszukaja wszystkie linki i zapisz je do pliku o nazwie 'linki.txt'. *
+21. Poleceniem wget pobierz zawartość strony www.onet.pl (tylko tej) i następnie poleceniem grep wyszukaj wszystkie linki i zapisz je do pliku o nazwie 'linki.txt'. *
