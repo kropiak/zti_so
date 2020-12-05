@@ -503,7 +503,7 @@ echo $?
 ```
 
 W przypadku koniunkcji logicznej (ang. `AND`) używamy parametru `–a` lub `&&`:
-```
+```bash
 #!/bin/bash
 a=2
 test $a –gt 1 –a $a –lt 3
