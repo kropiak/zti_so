@@ -360,6 +360,7 @@ For details type 'warranty'.
 3/2
 1
 ```
+> Uwaga! W przypadku narzędzia `bc` operator potęgowania to `^`, np. 5^2 oznacza 5 do potęgi 2. Wiecej w `man bc`.
 
 Po uruchomieniu kalkulatora wprowadzamy wyrażenie do obliczenia i w celu jego obliczenia wciskamy klawisz Enter. Aby wyjść z kalkulatora wpisujemy `quit` i wciskamy Enter. Jak widać domyślnie kalkulator zwrócił nam taki sam wynik jak skrypt. Aby to zmienić musimy poinformować kalkulator o ilości miejsc po przecinku, na których chcemy operować. Robimy to poprzez ustawienie wartości dla parametru `scale`.
 ```bash
