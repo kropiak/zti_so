@@ -232,6 +232,7 @@ Operatory matematyczne:
 * `+` – dodawanie
 * `-` – odejmowanie
 * `*` – mnożenie
+* `**` - potęgowanie, np. `5**2` to 5 do potęgi 2
 * `/` – dzielenie
 * `%` – dzielenie z resztą (modulo)
 
