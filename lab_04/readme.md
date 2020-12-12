@@ -88,7 +88,7 @@ Kilka przykładów:
 * `$#` - zawiera liczbę argumentów przekazanych w linii poleceń.
 * `$_` - ścieżka z jaką został wywołany skrypt (powłoka)
 * `$@` - pokaże wszystkie parametry przekazywane do skryptu (też wyjątek), równoważne `$1 $2 $3` …, jeśli nie podane są żadne parametry `$@` interpretowana jest jako nic.
-`$$` - PID procesu bieżącej powłoki
+* `$$` - PID procesu bieżącej powłoki
 
 
 #### Zmienne systemowe
@@ -96,7 +96,7 @@ Kilka przykładów:
 
 Zmienne systemowe, często nazwane także zmiennymi środowiskowymi (ang. environment variables) - są zdefiniowane i przechowywane w środowisku nadrzędnym (powłoce z której uruchamiane są Twoje skrypty). Ich nazwy są zwyczajowo zapisane wielkimi literami. Definiują środowisko użytkownika, dostępne dla wszystkich procesów potomnych.
 
-Inicjacja zmiennej globalnej:
+Inicjalizacja zmiennej globalnej:
 ```bash
 test@host:~$ export JA="Krzysztof Ropiak"
 test@host:~$ echo $JA
@@ -106,7 +106,7 @@ Krzysztof Ropiak
 Listę zdefiniowanych zmiennych systemowych wraz z ich wartościami wyświetlamy poleceniem `printenv`.
 
 
-#### Zmienne tablicow
+#### Zmienne tablicowe
 
 
 BASH pozwala na stosowanie zmiennych tablicowych jednowymiarowych. Czym jest tablica? To zmienna która przechowuje listę jakichś wartości (rozdzielonych spacjami), w BASH'u nie ma maksymalnego rozmiaru tablic. Kolejne wartości zmiennej tablicowej indeksowane są przy pomocy liczb całkowitych, zaczynając od 0.
@@ -224,7 +224,7 @@ unset tablica[*]
 echo ${tablica[@]}
 ```
 
-Zmienna tablicowa o nazwie tablica przestała istnieć, polecenie: `echo ${tablica[@]}` nie wyświetli nic.
+Zmienna tablicowa o nazwie `tablica` przestała istnieć, polecenie: `echo ${tablica[@]}` nie wyświetli nic.
 
 ### 1.4. Obliczenia numeryczne
 

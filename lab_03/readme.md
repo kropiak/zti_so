@@ -210,7 +210,7 @@ Pamiętajmy również o tym, że możemy wartość zwróconą przez `grep` ponow
 15. To samo co w zadaniu 13, ale przeszukując również podfoldery.
 16. Z dołączenego pliku 'imiona.txt' wyświetl wszystkie imiona rozpoczynające się literami od A do K.
 17. Z pliku 'imiona.txt' wyświetl tylko te imiona, których nazwa ma 4 lub 5 liter długości.
-18. Z pliku 'imiona.txt' policz ile jest unikalnych imion kończących się literą 'a'.
+18. Z pliku 'imiona.txt' policz ile jest unikalnych imion kończących się literą 'A'.
 19. Z pliku `/etc/passwd` wyświetl wszystkie linie, których użytkownicy posiadają uid co najmniej 4-cyfrowy. *
 20. Z pliku `/etc/shadow` wyświetl wszystkie linie, gdzie użytkownik ma nieważne hasło (patrz lab 02). *
 21. Poleceniem wget pobierz zawartość strony www.onet.pl (tylko tej) i następnie poleceniem grep wyszukaj wszystkie linki i zapisz je do pliku o nazwie 'linki.txt'. *
