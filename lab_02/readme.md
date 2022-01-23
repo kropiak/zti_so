@@ -325,7 +325,7 @@ Usuwanie kont i grup:
 
 Blokowanie dostępu do konta:
 * poleceniem `passwd` z opcją `-l`,
-* przez ręczną modyfikację hasła w pliku `passwd/shadow`,
+* przez ręczną modyfikację hasła w pliku `/etc/shadow`,
 * poprzez zmianę powłoki użytkownika na program nie dopuszczający logowania.
 
 W zależności od narzędzia system przyjmie pewne wartości domyślne w przypadku tworzenia użytkowników np. wybrana powłoka, domyślny folder domowy. Część informacji domyślnych dla całego systemu znajduje się w pliku `/etc/profile`, ale znacznie więcej znajdziemy w `/etc/login.defs`.
