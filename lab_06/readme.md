@@ -21,8 +21,8 @@ Wypełnij test dostępny pod adresem https://forms.gle/Jei8fC7QdvDY8Lck9
 
 ## **1. Na rozluźnienie :)**
 
-https://www.tecmint.com/20-funny-commands-of-linux-or-linux-is-fun-in-terminal/
-http://smashingtips.com/linux/cool-terminal-commands-for-linux
+* https://www.tecmint.com/20-funny-commands-of-linux-or-linux-is-fun-in-terminal/
+* http://smashingtips.com/linux/cool-terminal-commands-for-linux
 
 
 ## **2. Zarządzanie usługami w systemie Linux.**
