@@ -12,7 +12,7 @@ Napisz skrypt, który będzie przyjmował z klawiatury kolejne liczby (nie musis
 Zadanie polega na stworzeniu prostego skryptu backupu (wykorzystamy jego zmodyfikowaną formę później). 
 1. Skrypt nazywamy `backup.sh` i umieszczamy w podfolderze `bin` w głównym katalogu użytkownika (należy stworzyć folder, jeżeli go nie ma). 
 2. Sprawdź w pliku ~/.profile czy istnieje odpowiednia instrukcja dodająca folder `bin` do zmiennej `PATH`. 
-3. Uruchomienie skryptu z parametrem add i ścieżką do folderu/pliku (np. `backup add ~/skrypty/) doda wpis (linię) do pliku `backup_sources.conf`, który powinien znajdować się w tym samym folderze co skrypt backup.sh.
-4. Niech 'kopie' będą umieszczane w folderze backup w głównym katalogu użytkownika.
+3. Uruchomienie skryptu z parametrem add i ścieżką do folderu/pliku (np. `backup add ~/skrypty/`) doda wpis (linię) do pliku `backup_sources.conf`, który powinien znajdować się w tym samym folderze co skrypt backup.sh.
+4. Niech 'kopie' będą umieszczane w folderze o nazwie `backup` w głównym katalogu użytkownika.
 5. Uruchomienie skryptu `backup.sh` powoduje stworzenie nowego folderu w folderze backup o nazwie równoważnej dacie jego uruchomienia w formacie RRRR-MM-DD_HH:MM:SS.
 6. Jeżeli na liście znajduje się folder to kopiuj całą jego zawartość.
