@@ -166,12 +166,3 @@ Wybrane usługi, które warto wdrożyć:
 * konfiguracja serwera DNS np. bind
   
 Moim zdaniem warto również dać szansę temu systemowi jako podstawowemu systemowi jeżeli planujemy pracę z programowaniem lub pracę z danymi (data science).
-
-
-
-Pomysły:
-
-* instalacja serwera MySQL i podłączenie z zewnątrz ?
-* udostępnianie zasobów sieciowych ? (samba ? )
-* dodatkowe zadania z wyrażeniami regularnymi ?
-* dokończenie zadań związanych z kontami użytkowników i uprawnieniami ?
